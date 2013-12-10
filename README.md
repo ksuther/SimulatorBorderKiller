@@ -18,8 +18,8 @@ Now that the device border is always hidden, which way is up? This adds the devi
 
 ## How do I use it?
 
-1. Install a SIMBL-loading system, such as [EasySIMBL](https://github.com/norio-nomura/EasySIMBL/).
-1. Build the project or download the latest release
+1. Install a SIMBL-loading system, such as [EasySIMBL](https://github.com/norio-nomura/EasySIMBL/)
+1. Build the project or [download the latest release](https://github.com/ksuther/SimulatorBorderKiller/releases/download/v0.1/SimulatorBorderKiller_0.1.zip)
 1. Move `SimulatorBorderKiller.bundle` into `~/Library/Application Support/SIMBL/Plug-ins`
 1. Relaunch the iOS Simulator
 
