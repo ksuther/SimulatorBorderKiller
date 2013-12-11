@@ -1,6 +1,6 @@
 # SimulatorBorderKiller
 
-Make the iOS simulator ever-so-slightly less annoying
+Make the iOS Simulator ever-so-slightly less annoying.
 
 ## What is this?
 
@@ -8,7 +8,7 @@ SimulatorBorderKiller does two things:
 
 #### 1. Hides the device border around the simulator window
 
-Normally, the iOS Simulator only hides the device border when you shrink it to 75% or 50%. SimularBorderKiller allows you to show just the titlebar even when running at 100% scale. Keep the simulator nice and large without sacrificing space.
+Normally, the iOS Simulator only hides the device border when you shrink it to 75% or 50%. SimulatorBorderKiller allows you to show just the titlebar even when running at 100% scale. Keep the simulator nice and large without sacrificing space.
 
 #### 2. Shows you the current device orientation in the titlebar
 
