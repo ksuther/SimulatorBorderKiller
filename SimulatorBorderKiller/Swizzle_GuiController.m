@@ -34,6 +34,7 @@
 - (NSInteger)orientation;
 - (NSInteger)desiredDeviceWindowType:(NSInteger)arg;
 - (CGSize)frameSizeWithChrome:(BOOL)arg1 scaledForMonitor:(BOOL)arg2;
+- (CGPoint)homeOriginForCurrentDeviceDoubled:(BOOL)arg1;
 @end
 
 @implementation Swizzle_GuiController
@@ -48,6 +49,7 @@
         MethodSwizzle(guiControllerClass, @selector(updateWindowTitle), @selector(swizzled_updateWindowTitle));
         MethodSwizzle(guiControllerClass, @selector(desiredDeviceWindowType:), @selector(swizzled_desiredDeviceWindowType:));
         MethodSwizzle(guiControllerClass, @selector(frameSizeWithChrome:scaledForMonitor:), @selector(swizzled_frameSizeWithChrome:scaledForMonitor:));
+        MethodSwizzle(guiControllerClass, @selector(homeOriginForCurrentDeviceDoubled:), @selector(swizzled_homeOriginForCurrentDeviceDoubled:));
         
         // The initial window maybe have been created before this bundle gets injected, this forces the window to rebuild without the chrome
         if ([[guiControllerClass sharedInstance] valueForKey:@"deviceWindow"]) {
@@ -107,6 +109,15 @@
 {
     // Always return the size without chrome
     return [self swizzled_frameSizeWithChrome:NO scaledForMonitor:arg2];
+}
+
+- (CGPoint)swizzled_homeOriginForCurrentDeviceDoubled:(BOOL)arg1
+{
+    // Prevents the home button from being clickable
+    // Otherwise you can click on where the home button would usually be and it'll still work
+    [self swizzled_homeOriginForCurrentDeviceDoubled:arg1];
+    
+    return CGPointMake(-100, -100);
 }
 
 @end
